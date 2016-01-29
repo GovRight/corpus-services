@@ -11,5 +11,9 @@
     "node_modules",
     "bower_components"
   ],
+  "dependencies": {
+    "angular": "^1.4.0",
+    "angular-resource": "^1.4.0"
+  },
   "license": "MIT"
 }
