@@ -31,7 +31,7 @@ gulp.task('docs-html', function() {
       './dist/govright-corpus-services.js'
       ]).pipe($.ngdocs.process({
         html5Mode: false,
-        title: 'GovRight Corpus services for AngularJS 1'
+        title: 'GovRight Corpus Services'
       }))
       .pipe(gulp.dest('./'));
   });
