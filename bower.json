@@ -1,0 +1,15 @@
+{
+  "name": "govright-corpus-services",
+  "description": "GovRight Corpus services for AngularJS v1",
+  "homepage": "https://github.com/GovRight/corpus-services",
+  "main": "./dist/govright-corpus-services.js",
+  "authors": [
+    "Victor Miletsky <victor@govright.org>",
+    "Heath Morrison <heath@govright.org>"
+  ],
+  "ignore": [
+    "node_modules",
+    "bower_components"
+  ],
+  "license": "MIT"
+}
