@@ -1,5 +1,8 @@
 # GovRight Corpus services for AngularJS v1
 
+The govright.corpusServices module provides services for interacting with the models 
+exposed by the LoopBack server via the REST API.
+
 ## API
 Check the [documentation](http://govright.github.io/corpus-services/docs/#/api/govright.corpusServices) 
 for detailed API reference.
