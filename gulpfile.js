@@ -1,7 +1,7 @@
 var gulp = require('gulp');
 var $ = require('gulp-load-plugins')();
-var spawn = require('child_process').spawn;
-var chalk = require('chalk');
+var browserSync = require('browser-sync');
+var reload = browserSync.reload;
 
 gulp.task('js', function() {
   return gulp.src([
@@ -17,24 +17,46 @@ gulp.task('js', function() {
     .pipe(gulp.dest('./dist'));
 });
 
-gulp.task('docs-html', function() {
-  var git = spawn('git', ['branch']), output = '';
-  git.stdout.on('data', function(data) {
-    output += data;
-  });
-  git.on('close', function() {
-    if(output.indexOf('* gh-pages') < 0) {
-      console.log(chalk.red('\n\nYou must use `gh-pages` branch for html documentation.\n\n'));
-      process.exit();
+gulp.task('docs-html', function () {
+  return $.ngdocs.sections({
+    api: {
+      glob: ['./dist/govright-corpus-services.js'],
+      api: true,
+      title: 'API Reference'
     }
-    return gulp.src([
-      './dist/govright-corpus-services.js'
-      ]).pipe($.ngdocs.process({
-        html5Mode: false,
-        title: 'GovRight Corpus Services'
-      }))
-      .pipe(gulp.dest('./'));
+  }).pipe($.ngdocs.process({
+    startPage: '/api/govright.corpusServices',
+    html5Mode: false,
+    title: 'GovRight Corpus Services',
+    styles: [
+      'ngdocs_assets/govright-docs.css',
+      'bower_components/gulp-ngdocs-supplemental/dist/style.css'
+    ],
+    navTemplate: './ngdocs_assets/navbar.html'
+  }))
+    .pipe(gulp.dest('./docs'));
+});
+
+gulp.task('serve', ['docs'], function () {
+  browserSync({
+    notify: false,
+    port: 9000,
+    server: {
+      baseDir: ['./docs']
+    }
   });
+  gulp.watch([
+    './dist/govright-corpus-services.js',
+    './docs/partials/**/*',
+    './docs/css/**/*'
+  ]).on('change', reload);
+  gulp.watch([
+    './dist/govright-corpus-services.js',
+    './ngdocs_assets/**/*'
+  ], ['docs']);
+  gulp.watch([
+    './src/**/*.js'
+  ], ['js']);
 });
 
 gulp.task('docs', ['docs-html'/*, 'docs-md'*/]);

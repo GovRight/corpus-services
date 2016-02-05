@@ -1,6 +1,9 @@
 node_modules
-bower_components
+/bower_components
 .tmp
 .idea
 *.log
 .DS_Store
+
+# Only master
+/docs
