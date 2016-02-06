@@ -8,8 +8,13 @@
     "Heath Morrison <heath@govright.org>"
   ],
   "ignore": [
+    "**/.*",
+    "ngdocs_assets",
     "node_modules",
-    "bower_components"
+    "bower_components",
+    "docs",
+    "gulpfile.js",
+    "package.json"
   ],
   "dependencies": {
     "angular": "^1.4.0",
