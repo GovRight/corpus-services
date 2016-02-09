@@ -421,7 +421,6 @@ NG_DOCS={
       "js/marked.js"
     ],
     "styles": [
-      "css/ngdocs_assets/govright-docs.css",
       "css/bower_components/gulp-ngdocs-supplemental/dist/style.css"
     ],
     "title": "GovRight Corpus Services",
