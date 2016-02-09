@@ -26,10 +26,7 @@ gulp.task('docs-html', function () {
     startPage: '/api/govright.corpusServices',
     html5Mode: false,
     title: 'GovRight Corpus Services',
-    styles: [
-      'ngdocs_assets/govright-docs.css',
-      'bower_components/gulp-ngdocs-supplemental/dist/style.css'
-    ],
+    styles: [ 'bower_components/gulp-ngdocs-supplemental/dist/style.css' ],
     navTemplate: './ngdocs_assets/navbar.html'
   }))
     .pipe(gulp.dest('./docs'));
