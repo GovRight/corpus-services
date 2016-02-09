@@ -1,10 +1,8 @@
-# GovRight Corpus services for AngularJS v1
+# GovRight Corpus Services
 
-The govright.corpusServices module provides services for interacting with the models 
+The `govright.corpusServices` module provides services for interacting with the models
 exposed by the LoopBack server via the REST API.
-
-## API
-Check the [documentation](http://govright.github.io/corpus-services/docs/#/api/govright.corpusServices) 
+Check the [documentation](http://govright.github.io/corpus-services/docs/#/api/govright.corpusServices)
 for detailed API reference.
 
 ## Usage
@@ -33,7 +31,7 @@ There are several gulp tasks available:
 
 ```bash
 # To build packaged js files from sources
-gulp
+gulp js
 
 # To build html documentation from source ngdocs
 # Changes must be commited on `gh-pages` branch
@@ -41,4 +39,7 @@ gulp docs
 
 # To run local documentation server
 gulp serve
+
+# Build dist and docs
+gulp
 ```
