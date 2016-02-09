@@ -7,8 +7,6 @@ gulp.task('js', function() {
   return gulp.src([
     './src/*.js'
   ]).pipe($.concat('govright-corpus-services.js'))
-    .pipe($.replace('lbServices.', 'govright.corpusServices'))
-    .pipe($.replace('govrightCorpusServices', 'govright.corpusServices'))
     .pipe(gulp.dest('./dist'))
     .pipe($.uglify())
     .pipe($.rename({
