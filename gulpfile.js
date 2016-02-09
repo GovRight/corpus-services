@@ -61,4 +61,6 @@ gulp.task('serve', ['docs'], function () {
 
 gulp.task('docs', ['docs-html'/*, 'docs-md'*/]);
 
-gulp.task('default', ['js']);
+gulp.task('default', ['js'], function() {
+  return gulp.start('docs');
+});

@@ -30,7 +30,7 @@ There are several gulp tasks available:
 
 ```bash
 # To build packaged js files from sources
-gulp
+gulp js
 
 # To build html documentation from source ngdocs
 # Changes must be commited on `gh-pages` branch
@@ -38,4 +38,7 @@ gulp docs
 
 # To run local documentation server
 gulp serve
+
+# Build dist and docs
+gulp
 ```
