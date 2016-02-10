@@ -32,7 +32,7 @@ gulp.task('docs-html', function () {
     .pipe(gulp.dest('./docs'));
 });
 
-gulp.task('serve', ['docs'], function () {
+gulp.task('serve', ['default'], function () {
   browserSync({
     notify: false,
     port: 9000,
@@ -48,13 +48,18 @@ gulp.task('serve', ['docs'], function () {
   gulp.watch([
     './dist/govright-corpus-services.js',
     './ngdocs_assets/**/*'
-  ], ['docs']);
+  ], ['docs-html']);
   gulp.watch([
     './src/**/*.js'
   ], ['js']);
 });
 
-gulp.task('docs', ['docs-html'/*, 'docs-md'*/]);
+gulp.task('docs', function() {
+  return require('del')(['./docs']).then(function() {
+    return gulp.start('docs-html');
+  });
+});
+
 
 gulp.task('default', ['js'], function() {
   return gulp.start('docs');
