@@ -1,6 +1,6 @@
 {
   "name": "govright-corpus-services",
-  "description": "GovRight Corpus services for AngularJS v1",
+  "description": "Services for interacting with the models exposed by the LoopBack server via the REST API",
   "homepage": "https://github.com/GovRight/corpus-services",
   "main": "./dist/govright-corpus-services.js",
   "authors": [
@@ -19,6 +19,9 @@
   "dependencies": {
     "angular": "^1.4.0",
     "angular-resource": "^1.4.0"
+  },
+  "devDependencies": {
+    "gulp-ngdocs-supplemental": "git@github.com:miletsky/gulp-ngdocs-supplemental.git"
   },
   "license": "MIT"
 }

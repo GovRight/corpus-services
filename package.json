@@ -1,7 +1,7 @@
 {
   "name": "govright-corpus-services",
   "version": "1.0.0",
-  "description": "GovRight Corpus services for AngularJS v1",
+  "description": "Services for interacting with the models exposed by the LoopBack server via the REST API",
   "main": "gulpfile.js",
   "contributors": [
     {
@@ -26,6 +26,7 @@
   "homepage": "https://github.com/GovRight/corpus-services",
   "devDependencies": {
     "browser-sync": "^2.11.1",
+    "del": "^2.2.0",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
     "gulp-load-plugins": "^1.2.0",
