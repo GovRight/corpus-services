@@ -3,6 +3,13 @@
 var urlBase = "/api";
 var authHeader = 'authorization';
 
+function getHost(url) {
+  var m = url.match(/^(?:https?:)?\/\/([^\/]+)/);
+  return m ? m[1] : null;
+}
+
+var urlBaseHost = getHost(urlBase) || location.host;
+
 /**
  * @ngdoc overview
  * @name govright.corpusServices
@@ -574,6 +581,40 @@ module.factory(
 
         /**
          * @ngdoc method
+         * @name govright.corpusServices.Law#distinct
+         * @methodOf govright.corpusServices.Law
+         *
+         * @description
+         *
+         * Identify distinct values of the model matched by filter.where from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining distinct fields and limiting where
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Law` object.)
+         * </em>
+         */
+        "distinct": {
+          isArray: true,
+          url: urlBase + "/Laws/distinct",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
          * @name govright.corpusServices.Law#comparisonPackage
          * @methodOf govright.corpusServices.Law
          *
@@ -612,6 +653,75 @@ module.factory(
          */
         "comparisonPackage": {
           url: urlBase + "/Laws/compare",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.Law#package
+         * @methodOf govright.corpusServices.Law
+         *
+         * @description
+         *
+         * Get a packaged Law by slug
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `slug` – `{string}` - 
+         *
+         *  - `rev` – `{number=}` - 
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Law` object.)
+         * </em>
+         */
+        "package": {
+          url: urlBase + "/Laws/package",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.Law#prototype$package
+         * @methodOf govright.corpusServices.Law
+         *
+         * @description
+         *
+         * Get a packaged Law data
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Law` object.)
+         * </em>
+         */
+        "prototype$package": {
+          url: urlBase + "/Laws/:id/package",
           method: "GET"
         },
 
@@ -2486,6 +2596,40 @@ module.factory(
         "createChangeStream": {
           url: urlBase + "/Discussions/change-stream",
           method: "POST"
+        },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.Discussion#distinct
+         * @methodOf govright.corpusServices.Discussion
+         *
+         * @description
+         *
+         * Identify distinct values of the model matched by filter.where from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining distinct fields and limiting where
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Discussion` object.)
+         * </em>
+         */
+        "distinct": {
+          isArray: true,
+          url: urlBase + "/Discussions/distinct",
+          method: "GET"
         },
 
         /**
@@ -7504,6 +7648,40 @@ module.factory(
 
         /**
          * @ngdoc method
+         * @name govright.corpusServices.Node#distinct
+         * @methodOf govright.corpusServices.Node
+         *
+         * @description
+         *
+         * Identify distinct values of the model matched by filter.where from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining distinct fields and limiting where
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Node` object.)
+         * </em>
+         */
+        "distinct": {
+          isArray: true,
+          url: urlBase + "/Nodes/distinct",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
          * @name govright.corpusServices.Node#prototype$addRevision
          * @methodOf govright.corpusServices.Node
          *
@@ -10851,6 +11029,40 @@ module.factory(
 
         /**
          * @ngdoc method
+         * @name govright.corpusServices.Version#distinct
+         * @methodOf govright.corpusServices.Version
+         *
+         * @description
+         *
+         * Identify distinct values of the model matched by filter.where from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining distinct fields and limiting where
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Version` object.)
+         * </em>
+         */
+        "distinct": {
+          isArray: true,
+          url: urlBase + "/Versions/distinct",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
          * @name govright.corpusServices.Version#prototype$message
          * @methodOf govright.corpusServices.Version
          *
@@ -13279,6 +13491,40 @@ module.factory(
 
         /**
          * @ngdoc method
+         * @name govright.corpusServices.Comment#distinct
+         * @methodOf govright.corpusServices.Comment
+         *
+         * @description
+         *
+         * Identify distinct values of the model matched by filter.where from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining distinct fields and limiting where
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Comment` object.)
+         * </em>
+         */
+        "distinct": {
+          isArray: true,
+          url: urlBase + "/Comments/distinct",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
          * @name govright.corpusServices.Comment#prototype$respond
          * @methodOf govright.corpusServices.Comment
          *
@@ -15385,6 +15631,40 @@ module.factory(
           method: "POST"
         },
 
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.Vote#distinct
+         * @methodOf govright.corpusServices.Vote
+         *
+         * @description
+         *
+         * Identify distinct values of the model matched by filter.where from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining distinct fields and limiting where
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Vote` object.)
+         * </em>
+         */
+        "distinct": {
+          isArray: true,
+          url: urlBase + "/Votes/distinct",
+          method: "GET"
+        },
+
         // INTERNAL. Use Version.votes.findById() instead.
         "::findById::Version::votes": {
           params: {
@@ -16963,6 +17243,40 @@ module.factory(
         "createChangeStream": {
           url: urlBase + "/Comparisons/change-stream",
           method: "POST"
+        },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.Comparison#distinct
+         * @methodOf govright.corpusServices.Comparison
+         *
+         * @description
+         *
+         * Identify distinct values of the model matched by filter.where from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining distinct fields and limiting where
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Comparison` object.)
+         * </em>
+         */
+        "distinct": {
+          isArray: true,
+          url: urlBase + "/Comparisons/distinct",
+          method: "GET"
         },
 
         /**
@@ -18637,6 +18951,40 @@ module.factory(
         "createChangeStream": {
           url: urlBase + "/Contributions/change-stream",
           method: "POST"
+        },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.Contribution#distinct
+         * @methodOf govright.corpusServices.Contribution
+         *
+         * @description
+         *
+         * Identify distinct values of the model matched by filter.where from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining distinct fields and limiting where
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Contribution` object.)
+         * </em>
+         */
+        "distinct": {
+          isArray: true,
+          url: urlBase + "/Contributions/distinct",
+          method: "GET"
         },
 
         // INTERNAL. Use Discussion.votes.findById() instead.
@@ -21445,6 +21793,40 @@ module.factory(
           url: urlBase + "/NodeRevisionMaps/change-stream",
           method: "POST"
         },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.NodeRevisionMap#distinct
+         * @methodOf govright.corpusServices.NodeRevisionMap
+         *
+         * @description
+         *
+         * Identify distinct values of the model matched by filter.where from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining distinct fields and limiting where
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `NodeRevisionMap` object.)
+         * </em>
+         */
+        "distinct": {
+          isArray: true,
+          url: urlBase + "/NodeRevisionMaps/distinct",
+          method: "GET"
+        },
       }
     );
 
@@ -22036,6 +22418,40 @@ module.factory(
         "createChangeStream": {
           url: urlBase + "/Tags/change-stream",
           method: "POST"
+        },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.Tag#distinct
+         * @methodOf govright.corpusServices.Tag
+         *
+         * @description
+         *
+         * Identify distinct values of the model matched by filter.where from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining distinct fields and limiting where
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Tag` object.)
+         * </em>
+         */
+        "distinct": {
+          isArray: true,
+          url: urlBase + "/Tags/distinct",
+          method: "GET"
         },
 
         // INTERNAL. Use Node.tags.findById() instead.
@@ -22733,6 +23149,40 @@ module.factory(
           url: urlBase + "/NodeTags/change-stream",
           method: "POST"
         },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.NodeTag#distinct
+         * @methodOf govright.corpusServices.NodeTag
+         *
+         * @description
+         *
+         * Identify distinct values of the model matched by filter.where from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining distinct fields and limiting where
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `NodeTag` object.)
+         * </em>
+         */
+        "distinct": {
+          isArray: true,
+          url: urlBase + "/NodeTags/distinct",
+          method: "GET"
+        },
       }
     );
 
@@ -23397,6 +23847,40 @@ module.factory(
           url: urlBase + "/DiscussionCountries/change-stream",
           method: "POST"
         },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.DiscussionCountry#distinct
+         * @methodOf govright.corpusServices.DiscussionCountry
+         *
+         * @description
+         *
+         * Identify distinct values of the model matched by filter.where from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining distinct fields and limiting where
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `DiscussionCountry` object.)
+         * </em>
+         */
+        "distinct": {
+          isArray: true,
+          url: urlBase + "/DiscussionCountries/distinct",
+          method: "GET"
+        },
       }
     );
 
@@ -23998,6 +24482,40 @@ module.factory(
 
         /**
          * @ngdoc method
+         * @name govright.corpusServices.Scope#distinct
+         * @methodOf govright.corpusServices.Scope
+         *
+         * @description
+         *
+         * Identify distinct values of the model matched by filter.where from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining distinct fields and limiting where
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Scope` object.)
+         * </em>
+         */
+        "distinct": {
+          isArray: true,
+          url: urlBase + "/Scopes/distinct",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
          * @name govright.corpusServices.Scope#findLinked
          * @methodOf govright.corpusServices.Scope
          *
@@ -24281,7 +24799,7 @@ module.factory(
 
 module
   .factory('LoopBackAuth', function() {
-    var props = ['accessTokenId', 'currentUserId'];
+    var props = ['accessTokenId', 'currentUserId', 'rememberMe'];
     var propsPrefix = '$LoopBack$';
 
     function LoopBackAuth() {
@@ -24289,7 +24807,6 @@ module
       props.forEach(function(name) {
         self[name] = load(name);
       });
-      this.rememberMe = undefined;
       this.currentUserData = null;
     }
 
@@ -24343,8 +24860,9 @@ module
       return {
         'request': function(config) {
 
-          // filter out non urlBase requests
-          if (config.url.substr(0, urlBase.length) !== urlBase) {
+          // filter out external requests
+          var host = getHost(config.url);
+          if (host && host !== urlBaseHost) {
             return config;
           }
 
@@ -24412,6 +24930,7 @@ module
      */
     this.setUrlBase = function(url) {
       urlBase = url;
+      urlBaseHost = getHost(urlBase) || location.host;
     };
 
     /**
