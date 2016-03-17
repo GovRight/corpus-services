@@ -212,6 +212,60 @@ NG_DOCS={
     },
     {
       "section": "api",
+      "id": "govright.corpusServices.MediaIncident",
+      "shortName": "govright.corpusServices.MediaIncident",
+      "type": "object",
+      "moduleName": "govright.corpusServices",
+      "shortDescription": "A $resource object for interacting with the MediaIncident model.",
+      "keywords": "$resource accept actual altogether angularjs api argument arguments attributes callback change changes check corpusservices count create createchangestream createmany criteria data defining definition delete deletebyid description destroybyid distinct empty error errorcb example existing exists expects fields filter find findbyid findone govright http httpresponse identify include insert instance instances interacting limit limiting match matched mediaincident mediareport method model modelname node nodes number object offset omit options order org parameters persist persistedmodel populated postdata properties property prototype provide queries reference remote removebyid reports represented request response responseheaders returned server source stream subset success successcb supply tag tags update updateall updated updateorcreate upsert values"
+    },
+    {
+      "section": "api",
+      "id": "govright.corpusServices.MediaIncident.nodes",
+      "shortName": "govright.corpusServices.MediaIncident.nodes",
+      "type": "object",
+      "moduleName": "govright.corpusServices.MediaIncident",
+      "shortDescription": "The object MediaIncident.nodes groups methods",
+      "keywords": "actual add api argument arguments call callback check corpusservices count counts create createmany creates criteria data definition delete deletes description destroyall destroybyid empty error errorcb existence exists expects find findbyid fk foreign govright groups httpresponse instance instances item key link manipulating match mediaincident method methods model node nodes object parameters persistedmodel populated postdata properties provide query reference relation remote remove request response responseheaders returned returns server subset success successcb unlink update updatebyid"
+    },
+    {
+      "section": "api",
+      "id": "govright.corpusServices.MediaIncident.reports",
+      "shortName": "govright.corpusServices.MediaIncident.reports",
+      "type": "object",
+      "moduleName": "govright.corpusServices.MediaIncident",
+      "shortDescription": "The object MediaIncident.reports groups methods",
+      "keywords": "actual api argument arguments call callback corpusservices count counts create createmany creates criteria data definition delete deletes description destroyall destroybyid empty error errorcb expects find findbyid fk foreign govright groups httpresponse instance instances item key manipulating match mediaincident mediareport method methods model object parameters persistedmodel populated postdata properties provide query reference remote reports request response responseheaders returned returns server subset success successcb update updatebyid"
+    },
+    {
+      "section": "api",
+      "id": "govright.corpusServices.MediaIncident.tags",
+      "shortName": "govright.corpusServices.MediaIncident.tags",
+      "type": "object",
+      "moduleName": "govright.corpusServices.MediaIncident",
+      "shortDescription": "The object MediaIncident.tags groups methods",
+      "keywords": "actual add api argument arguments call callback check corpusservices count counts create createmany creates criteria data definition delete deletes description destroyall destroybyid empty error errorcb existence exists expects find findbyid fk foreign govright groups httpresponse instance instances item key link manipulating match mediaincident method methods model object parameters persistedmodel populated postdata properties provide query reference relation remote remove request response responseheaders returned returns server subset success successcb tag tags unlink update updatebyid"
+    },
+    {
+      "section": "api",
+      "id": "govright.corpusServices.MediaIncidentNode",
+      "shortName": "govright.corpusServices.MediaIncidentNode",
+      "type": "object",
+      "moduleName": "govright.corpusServices",
+      "shortDescription": "A $resource object for interacting with the MediaIncidentNode model.",
+      "keywords": "$resource accept actual altogether angularjs api argument arguments attributes belongsto callback change changes check corpusservices count create createchangestream createmany criteria data defining definition delete deletebyid description destroybyid distinct empty error errorcb example existing exists expects fetches fields filter find findbyid findone govright http httpresponse identify incident include insert instance instances interacting limit limiting match matched mediaincident mediaincidentnode method model modelname node number object offset omit options order org parameters persist persistedmodel populated postdata properties property prototype provide reference refresh relation remote removebyid represented request response responseheaders returned server source stream subset success successcb supply update updateall updated updateorcreate upsert values"
+    },
+    {
+      "section": "api",
+      "id": "govright.corpusServices.MediaReport",
+      "shortName": "govright.corpusServices.MediaReport",
+      "type": "object",
+      "moduleName": "govright.corpusServices",
+      "shortDescription": "A $resource object for interacting with the MediaReport model.",
+      "keywords": "$resource accept actual altogether angularjs api argument arguments attributes belongsto callback change changes check corpusservices count create createchangestream createmany criteria data defining definition delete deletebyid description destroybyid distinct empty error errorcb example existing exists expects fetches fields filter find findbyid findone govright http httpresponse identify incident include insert instance instances interacting limit limiting match matched mediaincident mediareport method model modelname number object offset omit options order org parameters persist persistedmodel populated postdata properties property prototype provide reference refresh relation remote removebyid represented request response responseheaders returned server source stream subset success successcb supply update updateall updated updateorcreate upsert values"
+    },
+    {
+      "section": "api",
       "id": "govright.corpusServices.Node",
       "shortName": "govright.corpusServices.Node",
       "type": "object",
@@ -316,7 +370,16 @@ NG_DOCS={
       "type": "object",
       "moduleName": "govright.corpusServices",
       "shortDescription": "A $resource object for interacting with the Tag model.",
-      "keywords": "$resource accept actual altogether angularjs api argument arguments attributes callback change changes check corpusservices count create createchangestream createmany criteria data defining definition delete deletebyid description destroybyid distinct empty error errorcb example existing exists expects fields filter find findbyid findone govright http httpresponse identify include insert instance instances interacting limit limiting match matched method model modelname number object offset omit options order org parameters persist persistedmodel populated postdata properties property prototype provide reference remote removebyid represented request response responseheaders returned server source stream subset success successcb supply tag update updateall updated updateorcreate upsert values"
+      "keywords": "$resource accept actual altogether angularjs api argument arguments attributes belongsto callback change changes check corpusservices count create createchangestream createmany criteria data defining definition delete deletebyid description destroybyid distinct empty error errorcb example existing exists expects fetches fields filter find findbyid findone govright http httpresponse identify include insert instance instances interacting limit limiting match matched method model modelname number object offset omit options order org package packaged parameters parent persist persistedmodel populated postdata properties property prototype provide queries reference refresh relation remote removebyid represented request response responseheaders returned root server slug source stream subset success successcb supply tag tags tree update updateall updated updateorcreate upsert values"
+    },
+    {
+      "section": "api",
+      "id": "govright.corpusServices.Tag.tags",
+      "shortName": "govright.corpusServices.Tag.tags",
+      "type": "object",
+      "moduleName": "govright.corpusServices.Tag",
+      "shortDescription": "The object Tag.tags groups methods",
+      "keywords": "actual api argument arguments call callback corpusservices count counts create createmany creates criteria data definition delete deletes description destroyall destroybyid empty error errorcb expects find findbyid fk foreign govright groups httpresponse instance instances item key manipulating match method methods model object parameters persistedmodel populated postdata properties provide query reference remote request response responseheaders returned returns server subset success successcb tag tags update updatebyid"
     },
     {
       "section": "api",

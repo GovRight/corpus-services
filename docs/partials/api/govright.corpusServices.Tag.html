@@ -217,6 +217,62 @@ This usually means the response is a <code>Tag</code> object.)
 </em></p>
 </div></td></tr></table></div>
 </li>
+<li><h3 id="methods_package">package(parameters, successCb, errorCb)</h3>
+<div class="package"><div class="govright-corpusservices-tag-package-page"><p>Get a packaged tag tree by root tag slug</p>
+</div><h5 id="methods_package_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>parameters <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-corpusservices-tag-package-page"><p>Request parameters.</p>
+<ul>
+<li><code>slug</code> – <code>{string}</code> - Slug of the root tag</li>
+</ul>
+</div></td></tr><tr><td>successCb <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-function">function(Object,Object</a></td><td><div class="govright-corpusservices-tag-package-page"><p>Success callback with two arguments: <code>value</code>, <code>responseHeaders</code>.</p>
+</div></td></tr><tr><td>errorCb <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-function">function(Object</a></td><td><div class="govright-corpusservices-tag-package-page"><p>Error callback with one argument:
+<code>httpResponse</code>.</p>
+</div></td></tr></tbody></table><h5 id="methods_package_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-corpusservices-tag-package-page"><p>An empty reference that will be
+populated with the actual data once the response is returned
+from the server.</p>
+<p><em>
+(The remote method definition does not provide any description.
+This usually means the response is a <code>Tag</code> object.)
+</em></p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_parent">parent(parameters, successCb, errorCb)</h3>
+<div class="parent"><div class="govright-corpusservices-tag-parent-page"><p>Fetches belongsTo relation parent.</p>
+</div><h5 id="methods_parent_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>parameters <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-corpusservices-tag-parent-page"><p>Request parameters.</p>
+<ul>
+<li><p><code>id</code> – <code>{*}</code> - PersistedModel id</p>
+</li>
+<li><p><code>refresh</code> – <code>{boolean=}</code> - </p>
+</li>
+</ul>
+</div></td></tr><tr><td>successCb <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-function">function(Object,Object</a></td><td><div class="govright-corpusservices-tag-parent-page"><p>Success callback with two arguments: <code>value</code>, <code>responseHeaders</code>.</p>
+</div></td></tr><tr><td>errorCb <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-function">function(Object</a></td><td><div class="govright-corpusservices-tag-parent-page"><p>Error callback with one argument:
+<code>httpResponse</code>.</p>
+</div></td></tr></tbody></table><h5 id="methods_parent_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-corpusservices-tag-parent-page"><p>An empty reference that will be
+populated with the actual data once the response is returned
+from the server.</p>
+<p><em>
+(The remote method definition does not provide any description.
+This usually means the response is a <code>Tag</code> object.)
+</em></p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_prototype$package">prototype$package(parameters, successCb, errorCb)</h3>
+<div class="prototype$package"><div class="govright-corpusservices-tag-prototype-package-page"><p>Get a packaged tag tree</p>
+</div><h5 id="methods_prototype$package_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>parameters <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-corpusservices-tag-prototype-package-page"><p>Request parameters.</p>
+<p>  This method does not accept any parameters.
+  Supply an empty object or omit this argument altogether.</p>
+</div></td></tr><tr><td>successCb <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-function">function(Object,Object</a></td><td><div class="govright-corpusservices-tag-prototype-package-page"><p>Success callback with two arguments: <code>value</code>, <code>responseHeaders</code>.</p>
+</div></td></tr><tr><td>errorCb <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-function">function(Object</a></td><td><div class="govright-corpusservices-tag-prototype-package-page"><p>Error callback with one argument:
+<code>httpResponse</code>.</p>
+</div></td></tr></tbody></table><h5 id="methods_prototype$package_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-corpusservices-tag-prototype-package-page"><p>An empty reference that will be
+populated with the actual data once the response is returned
+from the server.</p>
+<p><em>
+(The remote method definition does not provide any description.
+This usually means the response is a <code>Tag</code> object.)
+</em></p>
+</div></td></tr></table></div>
+</li>
 <li><h3 id="methods_prototype$updateattributes">prototype$updateAttributes(parameters, postData, successCb, errorCb)</h3>
 <div class="prototype$updateattributes"><div class="govright-corpusservices-tag-prototype-updateattributes-page"><p>Update attributes for a model instance and persist it into the data source.</p>
 </div><h5 id="methods_prototype$updateattributes_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>parameters <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-corpusservices-tag-prototype-updateattributes-page"><p>Request parameters.</p>
@@ -247,6 +303,27 @@ This usually means the response is a <code>Tag</code> object.)
 </div></td></tr><tr><td>errorCb <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-function">function(Object</a></td><td><div class="govright-corpusservices-tag-removebyid-page"><p>Error callback with one argument:
 <code>httpResponse</code>.</p>
 </div></td></tr></tbody></table><h5 id="methods_removebyid_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-corpusservices-tag-removebyid-page"><p>An empty reference that will be
+populated with the actual data once the response is returned
+from the server.</p>
+<p><em>
+(The remote method definition does not provide any description.
+This usually means the response is a <code>Tag</code> object.)
+</em></p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_tags">tags(parameters, successCb, errorCb)</h3>
+<div class="tags"><div class="govright-corpusservices-tag-tags-page"><p>Queries tags of Tag.</p>
+</div><h5 id="methods_tags_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>parameters <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-corpusservices-tag-tags-page"><p>Request parameters.</p>
+<ul>
+<li><p><code>id</code> – <code>{*}</code> - PersistedModel id</p>
+</li>
+<li><p><code>filter</code> – <code>{object=}</code> - </p>
+</li>
+</ul>
+</div></td></tr><tr><td>successCb <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-function">function(Array.&lt;Object&gt;,Object</a></td><td><div class="govright-corpusservices-tag-tags-page"><p>Success callback with two arguments: <code>value</code>, <code>responseHeaders</code>.</p>
+</div></td></tr><tr><td>errorCb <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-function">function(Object</a></td><td><div class="govright-corpusservices-tag-tags-page"><p>Error callback with one argument:
+<code>httpResponse</code>.</p>
+</div></td></tr></tbody></table><h5 id="methods_tags_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-array">Array.&lt;Object&gt;</a></td><td><div class="govright-corpusservices-tag-tags-page"><p>An empty reference that will be
 populated with the actual data once the response is returned
 from the server.</p>
 <p><em>
