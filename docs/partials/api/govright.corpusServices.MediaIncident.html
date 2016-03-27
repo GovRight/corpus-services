@@ -258,6 +258,27 @@ This usually means the response is a <code>MediaIncident</code> object.)
 </em></p>
 </div></td></tr></table></div>
 </li>
+<li><h3 id="methods_region">region(parameters, successCb, errorCb)</h3>
+<div class="region"><div class="govright-corpusservices-mediaincident-region-page"><p>Fetches belongsTo relation region.</p>
+</div><h5 id="methods_region_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>parameters <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-corpusservices-mediaincident-region-page"><p>Request parameters.</p>
+<ul>
+<li><p><code>id</code> – <code>{*}</code> - PersistedModel id</p>
+</li>
+<li><p><code>refresh</code> – <code>{boolean=}</code> - </p>
+</li>
+</ul>
+</div></td></tr><tr><td>successCb <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-function">function(Object,Object</a></td><td><div class="govright-corpusservices-mediaincident-region-page"><p>Success callback with two arguments: <code>value</code>, <code>responseHeaders</code>.</p>
+</div></td></tr><tr><td>errorCb <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-function">function(Object</a></td><td><div class="govright-corpusservices-mediaincident-region-page"><p>Error callback with one argument:
+<code>httpResponse</code>.</p>
+</div></td></tr></tbody></table><h5 id="methods_region_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-corpusservices-mediaincident-region-page"><p>An empty reference that will be
+populated with the actual data once the response is returned
+from the server.</p>
+<p><em>
+(The remote method definition does not provide any description.
+This usually means the response is a <code>Region</code> object.)
+</em></p>
+</div></td></tr></table></div>
+</li>
 <li><h3 id="methods_removebyid">removeById(parameters, successCb, errorCb)</h3>
 <div class="removebyid"><div class="govright-corpusservices-mediaincident-removebyid-page"><p>Delete a model instance by id from the data source.</p>
 </div><h5 id="methods_removebyid_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>parameters <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-corpusservices-mediaincident-removebyid-page"><p>Request parameters.</p>
@@ -294,6 +315,45 @@ from the server.</p>
 <p><em>
 (The remote method definition does not provide any description.
 This usually means the response is a <code>MediaReport</code> object.)
+</em></p>
+</div></td></tr></table></div>
+</li>
+<li><h3 id="methods_search">search(parameters, successCb, errorCb)</h3>
+<div class="search"><div class="govright-corpusservices-mediaincident-search-page"><p>Get a media incident list by certain criteria.</p>
+</div><h5 id="methods_search_parameters">Parameters</h5><table class="variables-matrix table table-bordered table-striped"><thead><tr><th>Param</th><th>Type</th><th>Details</th></tr></thead><tbody><tr><td>parameters <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-corpusservices-mediaincident-search-page"><p>Request parameters.</p>
+<ul>
+<li><p><code>country</code> – <code>{string=}</code> - Country code, e.g. <code>MA</code>, <code>UA</code>, etc.</p>
+</li>
+<li><p><code>limit</code> – <code>{string=}</code> - Number of items to return.</p>
+</li>
+<li><p><code>skip</code> – <code>{string=}</code> - Number of items to skip from the beginning of set.</p>
+</li>
+<li><p><code>order</code> – <code>{string=}</code> - Order of the incidents (loopback order filter).</p>
+</li>
+<li><p><code>include</code> – <code>{string=}</code> - Comma separated array of relations to include like <code>reports,tags,nodes</code>.</p>
+</li>
+<li><p><code>text</code> – <code>{string=}</code> - Text string to search over incident locales.</p>
+</li>
+<li><p><code>date</code> – <code>{string=}</code> - Date range <code>start|end</code>, like <code>2016-01-01|2016-01-02</code>, or one of the next predefined values: <br><code>today</code> - all incidents for the current day, <br><code>last-7d</code> - for the last 7 days, <br><code>last-30d</code> - for the last 30 days, <br><code>last-90d</code> - for the last 90 days, <br><code>last-y</code> - for the last 365 days, <br>empty value to get all incidents.</p>
+</li>
+<li><p><code>location</code> – <code>{string=}</code> - Region id.</p>
+</li>
+<li><p><code>tag</code> – <code>{string=}</code> - Tag id.</p>
+</li>
+<li><p><code>node</code> – <code>{string=}</code> - Node id.</p>
+</li>
+<li><p><code>law</code> – <code>{string=}</code> - Law id.</p>
+</li>
+</ul>
+</div></td></tr><tr><td>successCb <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-function">function(Object,Object</a></td><td><div class="govright-corpusservices-mediaincident-search-page"><p>Success callback with two arguments: <code>value</code>, <code>responseHeaders</code>.</p>
+</div></td></tr><tr><td>errorCb <div><em>(optional)</em></div></td><td><a href="" class="label type-hint type-hint-function">function(Object</a></td><td><div class="govright-corpusservices-mediaincident-search-page"><p>Error callback with one argument:
+<code>httpResponse</code>.</p>
+</div></td></tr></tbody></table><h5 id="methods_search_returns">Returns</h5><table class="variables-matrix"><tr><td><a href="" class="label type-hint type-hint-object">Object</a></td><td><div class="govright-corpusservices-mediaincident-search-page"><p>An empty reference that will be
+populated with the actual data once the response is returned
+from the server.</p>
+<p><em>
+(The remote method definition does not provide any description.
+This usually means the response is a <code>MediaIncident</code> object.)
 </em></p>
 </div></td></tr></table></div>
 </li>

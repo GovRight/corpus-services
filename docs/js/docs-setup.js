@@ -217,7 +217,7 @@ NG_DOCS={
       "type": "object",
       "moduleName": "govright.corpusServices",
       "shortDescription": "A $resource object for interacting with the MediaIncident model.",
-      "keywords": "$resource accept actual altogether angularjs api argument arguments attributes callback change changes check corpusservices count create createchangestream createmany criteria data defining definition delete deletebyid description destroybyid distinct empty error errorcb example existing exists expects fields filter find findbyid findone govright http httpresponse identify include insert instance instances interacting limit limiting match matched mediaincident mediareport method model modelname node nodes number object offset omit options order org parameters persist persistedmodel populated postdata properties property prototype provide queries reference remote removebyid reports represented request response responseheaders returned server source stream subset success successcb supply tag tags update updateall updated updateorcreate upsert values"
+      "keywords": "$resource accept actual altogether angularjs api argument arguments array attributes belongsto callback change changes check code comma corpusservices count country create createchangestream createmany criteria current data day days defining definition delete deletebyid description destroybyid distinct empty error errorcb example existing exists expects fetches fields filter find findbyid findone govright http httpresponse identify incident incidents include insert instance instances interacting items last-30d last-7d last-90d last-y law limit limiting list locales location ma match matched media mediaincident mediareport method model modelname node nodes number object offset omit options order org parameters persist persistedmodel populated postdata predefined properties property prototype provide queries range reference refresh region relation relations remote removebyid reports represented request response responseheaders return returned search separated server set skip source start stream string subset success successcb supply tag tags text today ua update updateall updated updateorcreate upsert values"
     },
     {
       "section": "api",
@@ -353,6 +353,15 @@ NG_DOCS={
       "moduleName": "govright.corpusServices",
       "shortDescription": "A $resource object for interacting with the NodeTag model.",
       "keywords": "$resource accept actual altogether angularjs api argument arguments attributes belongsto callback change changes check corpusservices count create createchangestream createmany criteria data defining definition delete deletebyid description destroybyid distinct empty error errorcb example existing exists expects fetches fields filter find findbyid findone govright http httpresponse identify include insert instance instances interacting limit limiting match matched method model modelname node nodetag number object offset omit options order org parameters persist persistedmodel populated postdata properties property prototype provide reference refresh relation remote removebyid represented request response responseheaders returned server source stream subset success successcb supply tag update updateall updated updateorcreate upsert values"
+    },
+    {
+      "section": "api",
+      "id": "govright.corpusServices.Region",
+      "shortName": "govright.corpusServices.Region",
+      "type": "object",
+      "moduleName": "govright.corpusServices",
+      "shortDescription": "A $resource object for interacting with the Region model.",
+      "keywords": "$resource accept actual altogether angularjs api argument arguments attributes callback change changes check corpusservices count create createchangestream createmany criteria data defining definition delete deletebyid description destroybyid distinct empty error errorcb example existing exists expects fields filter find findbyid findone govright http httpresponse identify include insert instance instances interacting limit limiting match matched method model modelname number object offset omit options order org parameters persist persistedmodel populated postdata properties property prototype provide reference region remote removebyid represented request response responseheaders returned server source stream subset success successcb supply update updateall updated updateorcreate upsert values"
     },
     {
       "section": "api",
