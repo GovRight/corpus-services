@@ -25661,6 +25661,12 @@ module.factory(
           method: "HEAD"
         },
 
+        // INTERNAL. Use MediaIncident.region() instead.
+        "prototype$__get__region": {
+          url: urlBase + "/MediaIncidents/:id/region",
+          method: "GET"
+        },
+
         // INTERNAL. Use MediaIncident.nodes() instead.
         "prototype$__get__nodes": {
           isArray: true,
@@ -26189,6 +26195,59 @@ module.factory(
         "distinct": {
           isArray: true,
           url: urlBase + "/MediaIncidents/distinct",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.MediaIncident#search
+         * @methodOf govright.corpusServices.MediaIncident
+         *
+         * @description
+         *
+         * Get a media incident list by certain criteria.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `country` – `{string=}` - Country code, e.g. `MA`, `UA`, etc.
+         *
+         *  - `limit` – `{string=}` - Number of items to return.
+         *
+         *  - `skip` – `{string=}` - Number of items to skip from the beginning of set.
+         *
+         *  - `order` – `{string=}` - Order of the incidents (loopback order filter).
+         *
+         *  - `include` – `{string=}` - Comma separated array of relations to include like `reports,tags,nodes`.
+         *
+         *  - `text` – `{string=}` - Text string to search over incident locales.
+         *
+         *  - `date` – `{string=}` - Date range `start|end`, like `2016-01-01|2016-01-02`, or one of the next predefined values: <br>`today` - all incidents for the current day, <br>`last-7d` - for the last 7 days, <br>`last-30d` - for the last 30 days, <br>`last-90d` - for the last 90 days, <br>`last-y` - for the last 365 days, <br>empty value to get all incidents.
+         *
+         *  - `location` – `{string=}` - Region id.
+         *
+         *  - `tag` – `{string=}` - Tag id.
+         *
+         *  - `node` – `{string=}` - Node id.
+         *
+         *  - `law` – `{string=}` - Law id.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `MediaIncident` object.)
+         * </em>
+         */
+        "search": {
+          url: urlBase + "/MediaIncidents/search",
           method: "GET"
         },
 
@@ -27464,6 +27523,42 @@ module.factory(
         R.tags.updateById = function() {
           var TargetResource = $injector.get("Tag");
           var action = TargetResource["::updateById::MediaIncident::tags"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.MediaIncident#region
+         * @methodOf govright.corpusServices.MediaIncident
+         *
+         * @description
+         *
+         * Fetches belongsTo relation region.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `refresh` – `{boolean=}` - 
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Region` object.)
+         * </em>
+         */
+        R.region = function() {
+          var TargetResource = $injector.get("Region");
+          var action = TargetResource["::get::MediaIncident::region"];
           return action.apply(R, arguments);
         };
 
@@ -28903,6 +28998,638 @@ module.factory(
           var action = TargetResource["::get::MediaReport::incident"];
           return action.apply(R, arguments);
         };
+
+    return R;
+  }]);
+
+/**
+ * @ngdoc object
+ * @name govright.corpusServices.Region
+ * @header govright.corpusServices.Region
+ * @object
+ *
+ * @description
+ *
+ * A $resource object for interacting with the `Region` model.
+ *
+ * ## Example
+ *
+ * See
+ * {@link http://docs.angularjs.org/api/ngResource.$resource#example $resource}
+ * for an example of using this object.
+ *
+ */
+module.factory(
+  "Region",
+  ['LoopBackResource', 'LoopBackAuth', '$injector', function(Resource, LoopBackAuth, $injector) {
+    var R = Resource(
+      urlBase + "/Regions/:id",
+      { 'id': '@id' },
+      {
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.Region#create
+         * @methodOf govright.corpusServices.Region
+         *
+         * @description
+         *
+         * Create a new instance of the model and persist it into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Region` object.)
+         * </em>
+         */
+        "create": {
+          url: urlBase + "/Regions",
+          method: "POST"
+        },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.Region#createMany
+         * @methodOf govright.corpusServices.Region
+         *
+         * @description
+         *
+         * Create a new instance of the model and persist it into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Region` object.)
+         * </em>
+         */
+        "createMany": {
+          isArray: true,
+          url: urlBase + "/Regions",
+          method: "POST"
+        },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.Region#upsert
+         * @methodOf govright.corpusServices.Region
+         *
+         * @description
+         *
+         * Update an existing model instance or insert a new one into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Region` object.)
+         * </em>
+         */
+        "upsert": {
+          url: urlBase + "/Regions",
+          method: "PUT"
+        },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.Region#exists
+         * @methodOf govright.corpusServices.Region
+         *
+         * @description
+         *
+         * Check whether a model instance exists in the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `exists` – `{boolean=}` - 
+         */
+        "exists": {
+          url: urlBase + "/Regions/:id/exists",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.Region#findById
+         * @methodOf govright.corpusServices.Region
+         *
+         * @description
+         *
+         * Find a model instance by id from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         *  - `filter` – `{object=}` - Filter defining fields and include
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Region` object.)
+         * </em>
+         */
+        "findById": {
+          url: urlBase + "/Regions/:id",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.Region#find
+         * @methodOf govright.corpusServices.Region
+         *
+         * @description
+         *
+         * Find all instances of the model matched by filter from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining fields, where, include, order, offset, and limit
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Region` object.)
+         * </em>
+         */
+        "find": {
+          isArray: true,
+          url: urlBase + "/Regions",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.Region#findOne
+         * @methodOf govright.corpusServices.Region
+         *
+         * @description
+         *
+         * Find first instance of the model matched by filter from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining fields, where, include, order, offset, and limit
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Region` object.)
+         * </em>
+         */
+        "findOne": {
+          url: urlBase + "/Regions/findOne",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.Region#updateAll
+         * @methodOf govright.corpusServices.Region
+         *
+         * @description
+         *
+         * Update instances of the model matched by where from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * The number of instances updated
+         */
+        "updateAll": {
+          url: urlBase + "/Regions/update",
+          method: "POST"
+        },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.Region#deleteById
+         * @methodOf govright.corpusServices.Region
+         *
+         * @description
+         *
+         * Delete a model instance by id from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Region` object.)
+         * </em>
+         */
+        "deleteById": {
+          url: urlBase + "/Regions/:id",
+          method: "DELETE"
+        },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.Region#count
+         * @methodOf govright.corpusServices.Region
+         *
+         * @description
+         *
+         * Count instances of the model matched by where from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `count` – `{number=}` - 
+         */
+        "count": {
+          url: urlBase + "/Regions/count",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.Region#prototype$updateAttributes
+         * @methodOf govright.corpusServices.Region
+         *
+         * @description
+         *
+         * Update attributes for a model instance and persist it into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Region` object.)
+         * </em>
+         */
+        "prototype$updateAttributes": {
+          url: urlBase + "/Regions/:id",
+          method: "PUT"
+        },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.Region#createChangeStream
+         * @methodOf govright.corpusServices.Region
+         *
+         * @description
+         *
+         * Create a change stream.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         *  - `options` – `{object=}` - 
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `changes` – `{ReadableStream=}` - 
+         */
+        "createChangeStream": {
+          url: urlBase + "/Regions/change-stream",
+          method: "POST"
+        },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.Region#distinct
+         * @methodOf govright.corpusServices.Region
+         *
+         * @description
+         *
+         * Identify distinct values of the model matched by filter.where from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining distinct fields and limiting where
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Region` object.)
+         * </em>
+         */
+        "distinct": {
+          isArray: true,
+          url: urlBase + "/Regions/distinct",
+          method: "GET"
+        },
+
+        // INTERNAL. Use MediaIncident.region() instead.
+        "::get::MediaIncident::region": {
+          url: urlBase + "/MediaIncidents/:id/region",
+          method: "GET"
+        },
+      }
+    );
+
+
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.Region#updateOrCreate
+         * @methodOf govright.corpusServices.Region
+         *
+         * @description
+         *
+         * Update an existing model instance or insert a new one into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Region` object.)
+         * </em>
+         */
+        R["updateOrCreate"] = R["upsert"];
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.Region#update
+         * @methodOf govright.corpusServices.Region
+         *
+         * @description
+         *
+         * Update instances of the model matched by where from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * The number of instances updated
+         */
+        R["update"] = R["updateAll"];
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.Region#destroyById
+         * @methodOf govright.corpusServices.Region
+         *
+         * @description
+         *
+         * Delete a model instance by id from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Region` object.)
+         * </em>
+         */
+        R["destroyById"] = R["deleteById"];
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.Region#removeById
+         * @methodOf govright.corpusServices.Region
+         *
+         * @description
+         *
+         * Delete a model instance by id from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Region` object.)
+         * </em>
+         */
+        R["removeById"] = R["deleteById"];
+
+
+    /**
+    * @ngdoc property
+    * @name govright.corpusServices.Region#modelName
+    * @propertyOf govright.corpusServices.Region
+    * @description
+    * The name of the model represented by this $resource,
+    * i.e. `Region`.
+    */
+    R.modelName = "Region";
+
 
     return R;
   }]);
