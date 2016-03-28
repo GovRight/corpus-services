@@ -26231,13 +26231,13 @@ module.factory(
          *
          *  - `law` – `{string=}` - Law id.
          *
-         * @param {function(Object,Object)=} successCb
+         * @param {function(Array.<Object>,Object)=} successCb
          *   Success callback with two arguments: `value`, `responseHeaders`.
          *
          * @param {function(Object)=} errorCb Error callback with one argument:
          *   `httpResponse`.
          *
-         * @returns {Object} An empty reference that will be
+         * @returns {Array.<Object>} An empty reference that will be
          *   populated with the actual data once the response is returned
          *   from the server.
          *
@@ -26247,6 +26247,7 @@ module.factory(
          * </em>
          */
         "search": {
+          isArray: true,
           url: urlBase + "/MediaIncidents/search",
           method: "GET"
         },
