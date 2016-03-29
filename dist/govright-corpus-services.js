@@ -615,6 +615,40 @@ module.factory(
 
         /**
          * @ngdoc method
+         * @name govright.corpusServices.Law#groupedcount
+         * @methodOf govright.corpusServices.Law
+         *
+         * @description
+         *
+         * Count with group aggregation.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining grouping fields and limiting where
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Law` object.)
+         * </em>
+         */
+        "groupedcount": {
+          isArray: true,
+          url: urlBase + "/Laws/groupedcount",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
          * @name govright.corpusServices.Law#comparisonPackage
          * @methodOf govright.corpusServices.Law
          *
@@ -734,6 +768,98 @@ module.factory(
         // INTERNAL. Use Node.law() instead.
         "::get::Node::law": {
           url: urlBase + "/Nodes/:id/law",
+          method: "GET"
+        },
+
+        // INTERNAL. Use MediaIncident.laws.findById() instead.
+        "::findById::MediaIncident::laws": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/MediaIncidents/:id/laws/:fk",
+          method: "GET"
+        },
+
+        // INTERNAL. Use MediaIncident.laws.destroyById() instead.
+        "::destroyById::MediaIncident::laws": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/MediaIncidents/:id/laws/:fk",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use MediaIncident.laws.updateById() instead.
+        "::updateById::MediaIncident::laws": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/MediaIncidents/:id/laws/:fk",
+          method: "PUT"
+        },
+
+        // INTERNAL. Use MediaIncident.laws.link() instead.
+        "::link::MediaIncident::laws": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/MediaIncidents/:id/laws/rel/:fk",
+          method: "PUT"
+        },
+
+        // INTERNAL. Use MediaIncident.laws.unlink() instead.
+        "::unlink::MediaIncident::laws": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/MediaIncidents/:id/laws/rel/:fk",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use MediaIncident.laws.exists() instead.
+        "::exists::MediaIncident::laws": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/MediaIncidents/:id/laws/rel/:fk",
+          method: "HEAD"
+        },
+
+        // INTERNAL. Use MediaIncident.laws() instead.
+        "::get::MediaIncident::laws": {
+          isArray: true,
+          url: urlBase + "/MediaIncidents/:id/laws",
+          method: "GET"
+        },
+
+        // INTERNAL. Use MediaIncident.laws.create() instead.
+        "::create::MediaIncident::laws": {
+          url: urlBase + "/MediaIncidents/:id/laws",
+          method: "POST"
+        },
+
+        // INTERNAL. Use MediaIncident.laws.createMany() instead.
+        "::createMany::MediaIncident::laws": {
+          isArray: true,
+          url: urlBase + "/MediaIncidents/:id/laws",
+          method: "POST"
+        },
+
+        // INTERNAL. Use MediaIncident.laws.destroyAll() instead.
+        "::delete::MediaIncident::laws": {
+          url: urlBase + "/MediaIncidents/:id/laws",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use MediaIncident.laws.count() instead.
+        "::count::MediaIncident::laws": {
+          url: urlBase + "/MediaIncidents/:id/laws/count",
+          method: "GET"
+        },
+
+        // INTERNAL. Use MediaIncidentNode.law() instead.
+        "::get::MediaIncidentNode::law": {
+          url: urlBase + "/MediaIncidentNodes/:id/law",
           method: "GET"
         },
       }
@@ -2629,6 +2755,40 @@ module.factory(
         "distinct": {
           isArray: true,
           url: urlBase + "/Discussions/distinct",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.Discussion#groupedcount
+         * @methodOf govright.corpusServices.Discussion
+         *
+         * @description
+         *
+         * Count with group aggregation.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining grouping fields and limiting where
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Discussion` object.)
+         * </em>
+         */
+        "groupedcount": {
+          isArray: true,
+          url: urlBase + "/Discussions/groupedcount",
           method: "GET"
         },
 
@@ -7682,6 +7842,40 @@ module.factory(
 
         /**
          * @ngdoc method
+         * @name govright.corpusServices.Node#groupedcount
+         * @methodOf govright.corpusServices.Node
+         *
+         * @description
+         *
+         * Count with group aggregation.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining grouping fields and limiting where
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Node` object.)
+         * </em>
+         */
+        "groupedcount": {
+          isArray: true,
+          url: urlBase + "/Nodes/groupedcount",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
          * @name govright.corpusServices.Node#prototype$addRevision
          * @methodOf govright.corpusServices.Node
          *
@@ -11155,6 +11349,40 @@ module.factory(
 
         /**
          * @ngdoc method
+         * @name govright.corpusServices.Version#groupedcount
+         * @methodOf govright.corpusServices.Version
+         *
+         * @description
+         *
+         * Count with group aggregation.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining grouping fields and limiting where
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Version` object.)
+         * </em>
+         */
+        "groupedcount": {
+          isArray: true,
+          url: urlBase + "/Versions/groupedcount",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
          * @name govright.corpusServices.Version#prototype$message
          * @methodOf govright.corpusServices.Version
          *
@@ -13617,6 +13845,40 @@ module.factory(
 
         /**
          * @ngdoc method
+         * @name govright.corpusServices.Comment#groupedcount
+         * @methodOf govright.corpusServices.Comment
+         *
+         * @description
+         *
+         * Count with group aggregation.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining grouping fields and limiting where
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Comment` object.)
+         * </em>
+         */
+        "groupedcount": {
+          isArray: true,
+          url: urlBase + "/Comments/groupedcount",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
          * @name govright.corpusServices.Comment#prototype$respond
          * @methodOf govright.corpusServices.Comment
          *
@@ -15757,6 +16019,40 @@ module.factory(
           method: "GET"
         },
 
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.Vote#groupedcount
+         * @methodOf govright.corpusServices.Vote
+         *
+         * @description
+         *
+         * Count with group aggregation.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining grouping fields and limiting where
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Vote` object.)
+         * </em>
+         */
+        "groupedcount": {
+          isArray: true,
+          url: urlBase + "/Votes/groupedcount",
+          method: "GET"
+        },
+
         // INTERNAL. Use Version.votes.findById() instead.
         "::findById::Version::votes": {
           params: {
@@ -17368,6 +17664,40 @@ module.factory(
         "distinct": {
           isArray: true,
           url: urlBase + "/Comparisons/distinct",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.Comparison#groupedcount
+         * @methodOf govright.corpusServices.Comparison
+         *
+         * @description
+         *
+         * Count with group aggregation.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining grouping fields and limiting where
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Comparison` object.)
+         * </em>
+         */
+        "groupedcount": {
+          isArray: true,
+          url: urlBase + "/Comparisons/groupedcount",
           method: "GET"
         },
 
@@ -19076,6 +19406,40 @@ module.factory(
         "distinct": {
           isArray: true,
           url: urlBase + "/Contributions/distinct",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.Contribution#groupedcount
+         * @methodOf govright.corpusServices.Contribution
+         *
+         * @description
+         *
+         * Count with group aggregation.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining grouping fields and limiting where
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Contribution` object.)
+         * </em>
+         */
+        "groupedcount": {
+          isArray: true,
+          url: urlBase + "/Contributions/groupedcount",
           method: "GET"
         },
 
@@ -21919,6 +22283,40 @@ module.factory(
           url: urlBase + "/NodeRevisionMaps/distinct",
           method: "GET"
         },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.NodeRevisionMap#groupedcount
+         * @methodOf govright.corpusServices.NodeRevisionMap
+         *
+         * @description
+         *
+         * Count with group aggregation.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining grouping fields and limiting where
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `NodeRevisionMap` object.)
+         * </em>
+         */
+        "groupedcount": {
+          isArray: true,
+          url: urlBase + "/NodeRevisionMaps/groupedcount",
+          method: "GET"
+        },
       }
     );
 
@@ -22606,6 +23004,40 @@ module.factory(
 
         /**
          * @ngdoc method
+         * @name govright.corpusServices.Tag#groupedcount
+         * @methodOf govright.corpusServices.Tag
+         *
+         * @description
+         *
+         * Count with group aggregation.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining grouping fields and limiting where
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Tag` object.)
+         * </em>
+         */
+        "groupedcount": {
+          isArray: true,
+          url: urlBase + "/Tags/groupedcount",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
          * @name govright.corpusServices.Tag#package
          * @methodOf govright.corpusServices.Tag
          *
@@ -22911,6 +23343,12 @@ module.factory(
         // INTERNAL. Use MediaIncident.tags.count() instead.
         "::count::MediaIncident::tags": {
           url: urlBase + "/MediaIncidents/:id/tags/count",
+          method: "GET"
+        },
+
+        // INTERNAL. Use MediaIncidentTag.tag() instead.
+        "::get::MediaIncidentTag::tag": {
+          url: urlBase + "/MediaIncidentTags/:id/tag",
           method: "GET"
         },
       }
@@ -23888,6 +24326,40 @@ module.factory(
           url: urlBase + "/NodeTags/distinct",
           method: "GET"
         },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.NodeTag#groupedcount
+         * @methodOf govright.corpusServices.NodeTag
+         *
+         * @description
+         *
+         * Count with group aggregation.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining grouping fields and limiting where
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `NodeTag` object.)
+         * </em>
+         */
+        "groupedcount": {
+          isArray: true,
+          url: urlBase + "/NodeTags/groupedcount",
+          method: "GET"
+        },
       }
     );
 
@@ -24586,6 +25058,40 @@ module.factory(
           url: urlBase + "/DiscussionCountries/distinct",
           method: "GET"
         },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.DiscussionCountry#groupedcount
+         * @methodOf govright.corpusServices.DiscussionCountry
+         *
+         * @description
+         *
+         * Count with group aggregation.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining grouping fields and limiting where
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `DiscussionCountry` object.)
+         * </em>
+         */
+        "groupedcount": {
+          isArray: true,
+          url: urlBase + "/DiscussionCountries/groupedcount",
+          method: "GET"
+        },
       }
     );
 
@@ -25221,6 +25727,40 @@ module.factory(
 
         /**
          * @ngdoc method
+         * @name govright.corpusServices.Scope#groupedcount
+         * @methodOf govright.corpusServices.Scope
+         *
+         * @description
+         *
+         * Count with group aggregation.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining grouping fields and limiting where
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Scope` object.)
+         * </em>
+         */
+        "groupedcount": {
+          isArray: true,
+          url: urlBase + "/Scopes/groupedcount",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
          * @name govright.corpusServices.Scope#findLinked
          * @methodOf govright.corpusServices.Scope
          *
@@ -25580,6 +26120,60 @@ module.factory(
           method: "HEAD"
         },
 
+        // INTERNAL. Use MediaIncident.laws.findById() instead.
+        "prototype$__findById__laws": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/MediaIncidents/:id/laws/:fk",
+          method: "GET"
+        },
+
+        // INTERNAL. Use MediaIncident.laws.destroyById() instead.
+        "prototype$__destroyById__laws": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/MediaIncidents/:id/laws/:fk",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use MediaIncident.laws.updateById() instead.
+        "prototype$__updateById__laws": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/MediaIncidents/:id/laws/:fk",
+          method: "PUT"
+        },
+
+        // INTERNAL. Use MediaIncident.laws.link() instead.
+        "prototype$__link__laws": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/MediaIncidents/:id/laws/rel/:fk",
+          method: "PUT"
+        },
+
+        // INTERNAL. Use MediaIncident.laws.unlink() instead.
+        "prototype$__unlink__laws": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/MediaIncidents/:id/laws/rel/:fk",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use MediaIncident.laws.exists() instead.
+        "prototype$__exists__laws": {
+          params: {
+          'fk': '@fk'
+          },
+          url: urlBase + "/MediaIncidents/:id/laws/rel/:fk",
+          method: "HEAD"
+        },
+
         // INTERNAL. Use MediaIncident.reports.findById() instead.
         "prototype$__findById__reports": {
           params: {
@@ -25689,6 +26283,31 @@ module.factory(
         // INTERNAL. Use MediaIncident.nodes.count() instead.
         "prototype$__count__nodes": {
           url: urlBase + "/MediaIncidents/:id/nodes/count",
+          method: "GET"
+        },
+
+        // INTERNAL. Use MediaIncident.laws() instead.
+        "prototype$__get__laws": {
+          isArray: true,
+          url: urlBase + "/MediaIncidents/:id/laws",
+          method: "GET"
+        },
+
+        // INTERNAL. Use MediaIncident.laws.create() instead.
+        "prototype$__create__laws": {
+          url: urlBase + "/MediaIncidents/:id/laws",
+          method: "POST"
+        },
+
+        // INTERNAL. Use MediaIncident.laws.destroyAll() instead.
+        "prototype$__delete__laws": {
+          url: urlBase + "/MediaIncidents/:id/laws",
+          method: "DELETE"
+        },
+
+        // INTERNAL. Use MediaIncident.laws.count() instead.
+        "prototype$__count__laws": {
+          url: urlBase + "/MediaIncidents/:id/laws/count",
           method: "GET"
         },
 
@@ -26200,6 +26819,40 @@ module.factory(
 
         /**
          * @ngdoc method
+         * @name govright.corpusServices.MediaIncident#groupedcount
+         * @methodOf govright.corpusServices.MediaIncident
+         *
+         * @description
+         *
+         * Count with group aggregation.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining grouping fields and limiting where
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `MediaIncident` object.)
+         * </em>
+         */
+        "groupedcount": {
+          isArray: true,
+          url: urlBase + "/MediaIncidents/groupedcount",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
          * @name govright.corpusServices.MediaIncident#search
          * @methodOf govright.corpusServices.MediaIncident
          *
@@ -26261,6 +26914,12 @@ module.factory(
         // INTERNAL. Use MediaReport.incident() instead.
         "::get::MediaReport::incident": {
           url: urlBase + "/MediaReports/:id/incident",
+          method: "GET"
+        },
+
+        // INTERNAL. Use MediaIncidentTag.incident() instead.
+        "::get::MediaIncidentTag::incident": {
+          url: urlBase + "/MediaIncidentTags/:id/incident",
           method: "GET"
         },
       }
@@ -26813,6 +27472,416 @@ module.factory(
         R.nodes.updateById = function() {
           var TargetResource = $injector.get("Node");
           var action = TargetResource["::updateById::MediaIncident::nodes"];
+          return action.apply(R, arguments);
+        };
+    /**
+     * @ngdoc object
+     * @name govright.corpusServices.MediaIncident.laws
+     * @header govright.corpusServices.MediaIncident.laws
+     * @object
+     * @description
+     *
+     * The object `MediaIncident.laws` groups methods
+     * manipulating `Law` instances related to `MediaIncident`.
+     *
+     * Call {@link govright.corpusServices.MediaIncident#laws MediaIncident.laws()}
+     * to query all related instances.
+     */
+
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.MediaIncident#laws
+         * @methodOf govright.corpusServices.MediaIncident
+         *
+         * @description
+         *
+         * Queries laws of MediaIncident.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `filter` – `{object=}` - 
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Law` object.)
+         * </em>
+         */
+        R.laws = function() {
+          var TargetResource = $injector.get("Law");
+          var action = TargetResource["::get::MediaIncident::laws"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.MediaIncident.laws#count
+         * @methodOf govright.corpusServices.MediaIncident.laws
+         *
+         * @description
+         *
+         * Counts laws of MediaIncident.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `count` – `{number=}` - 
+         */
+        R.laws.count = function() {
+          var TargetResource = $injector.get("Law");
+          var action = TargetResource["::count::MediaIncident::laws"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.MediaIncident.laws#create
+         * @methodOf govright.corpusServices.MediaIncident.laws
+         *
+         * @description
+         *
+         * Creates a new instance in laws of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Law` object.)
+         * </em>
+         */
+        R.laws.create = function() {
+          var TargetResource = $injector.get("Law");
+          var action = TargetResource["::create::MediaIncident::laws"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.MediaIncident.laws#createMany
+         * @methodOf govright.corpusServices.MediaIncident.laws
+         *
+         * @description
+         *
+         * Creates a new instance in laws of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Law` object.)
+         * </em>
+         */
+        R.laws.createMany = function() {
+          var TargetResource = $injector.get("Law");
+          var action = TargetResource["::createMany::MediaIncident::laws"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.MediaIncident.laws#destroyAll
+         * @methodOf govright.corpusServices.MediaIncident.laws
+         *
+         * @description
+         *
+         * Deletes all laws of this model.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        R.laws.destroyAll = function() {
+          var TargetResource = $injector.get("Law");
+          var action = TargetResource["::delete::MediaIncident::laws"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.MediaIncident.laws#destroyById
+         * @methodOf govright.corpusServices.MediaIncident.laws
+         *
+         * @description
+         *
+         * Delete a related item by id for laws.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `fk` – `{*}` - Foreign key for laws
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        R.laws.destroyById = function() {
+          var TargetResource = $injector.get("Law");
+          var action = TargetResource["::destroyById::MediaIncident::laws"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.MediaIncident.laws#exists
+         * @methodOf govright.corpusServices.MediaIncident.laws
+         *
+         * @description
+         *
+         * Check the existence of laws relation to an item by id.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `fk` – `{*}` - Foreign key for laws
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Law` object.)
+         * </em>
+         */
+        R.laws.exists = function() {
+          var TargetResource = $injector.get("Law");
+          var action = TargetResource["::exists::MediaIncident::laws"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.MediaIncident.laws#findById
+         * @methodOf govright.corpusServices.MediaIncident.laws
+         *
+         * @description
+         *
+         * Find a related item by id for laws.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `fk` – `{*}` - Foreign key for laws
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Law` object.)
+         * </em>
+         */
+        R.laws.findById = function() {
+          var TargetResource = $injector.get("Law");
+          var action = TargetResource["::findById::MediaIncident::laws"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.MediaIncident.laws#link
+         * @methodOf govright.corpusServices.MediaIncident.laws
+         *
+         * @description
+         *
+         * Add a related item by id for laws.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `fk` – `{*}` - Foreign key for laws
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Law` object.)
+         * </em>
+         */
+        R.laws.link = function() {
+          var TargetResource = $injector.get("Law");
+          var action = TargetResource["::link::MediaIncident::laws"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.MediaIncident.laws#unlink
+         * @methodOf govright.corpusServices.MediaIncident.laws
+         *
+         * @description
+         *
+         * Remove the laws relation to an item by id.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `fk` – `{*}` - Foreign key for laws
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * This method returns no data.
+         */
+        R.laws.unlink = function() {
+          var TargetResource = $injector.get("Law");
+          var action = TargetResource["::unlink::MediaIncident::laws"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.MediaIncident.laws#updateById
+         * @methodOf govright.corpusServices.MediaIncident.laws
+         *
+         * @description
+         *
+         * Update a related item by id for laws.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `fk` – `{*}` - Foreign key for laws
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Law` object.)
+         * </em>
+         */
+        R.laws.updateById = function() {
+          var TargetResource = $injector.get("Law");
+          var action = TargetResource["::updateById::MediaIncident::laws"];
           return action.apply(R, arguments);
         };
     /**
@@ -27603,6 +28672,12 @@ module.factory(
           method: "GET"
         },
 
+        // INTERNAL. Use MediaIncidentNode.law() instead.
+        "prototype$__get__law": {
+          url: urlBase + "/MediaIncidentNodes/:id/law",
+          method: "GET"
+        },
+
         /**
          * @ngdoc method
          * @name govright.corpusServices.MediaIncidentNode#create
@@ -28058,6 +29133,40 @@ module.factory(
           url: urlBase + "/MediaIncidentNodes/distinct",
           method: "GET"
         },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.MediaIncidentNode#groupedcount
+         * @methodOf govright.corpusServices.MediaIncidentNode
+         *
+         * @description
+         *
+         * Count with group aggregation.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining grouping fields and limiting where
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `MediaIncidentNode` object.)
+         * </em>
+         */
+        "groupedcount": {
+          isArray: true,
+          url: urlBase + "/MediaIncidentNodes/groupedcount",
+          method: "GET"
+        },
       }
     );
 
@@ -28270,6 +29379,42 @@ module.factory(
         R.incident = function() {
           var TargetResource = $injector.get("MediaIncident");
           var action = TargetResource["::get::MediaIncidentNode::incident"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.MediaIncidentNode#law
+         * @methodOf govright.corpusServices.MediaIncidentNode
+         *
+         * @description
+         *
+         * Fetches belongsTo relation law.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `refresh` – `{boolean=}` - 
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Law` object.)
+         * </em>
+         */
+        R.law = function() {
+          var TargetResource = $injector.get("Law");
+          var action = TargetResource["::get::MediaIncidentNode::law"];
           return action.apply(R, arguments);
         };
 
@@ -28763,6 +29908,40 @@ module.factory(
           method: "GET"
         },
 
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.MediaReport#groupedcount
+         * @methodOf govright.corpusServices.MediaReport
+         *
+         * @description
+         *
+         * Count with group aggregation.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining grouping fields and limiting where
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `MediaReport` object.)
+         * </em>
+         */
+        "groupedcount": {
+          isArray: true,
+          url: urlBase + "/MediaReports/groupedcount",
+          method: "GET"
+        },
+
         // INTERNAL. Use MediaIncident.reports.findById() instead.
         "::findById::MediaIncident::reports": {
           params: {
@@ -28997,6 +30176,750 @@ module.factory(
         R.incident = function() {
           var TargetResource = $injector.get("MediaIncident");
           var action = TargetResource["::get::MediaReport::incident"];
+          return action.apply(R, arguments);
+        };
+
+    return R;
+  }]);
+
+/**
+ * @ngdoc object
+ * @name govright.corpusServices.MediaIncidentTag
+ * @header govright.corpusServices.MediaIncidentTag
+ * @object
+ *
+ * @description
+ *
+ * A $resource object for interacting with the `MediaIncidentTag` model.
+ *
+ * ## Example
+ *
+ * See
+ * {@link http://docs.angularjs.org/api/ngResource.$resource#example $resource}
+ * for an example of using this object.
+ *
+ */
+module.factory(
+  "MediaIncidentTag",
+  ['LoopBackResource', 'LoopBackAuth', '$injector', function(Resource, LoopBackAuth, $injector) {
+    var R = Resource(
+      urlBase + "/MediaIncidentTags/:id",
+      { 'id': '@id' },
+      {
+
+        // INTERNAL. Use MediaIncidentTag.incident() instead.
+        "prototype$__get__incident": {
+          url: urlBase + "/MediaIncidentTags/:id/incident",
+          method: "GET"
+        },
+
+        // INTERNAL. Use MediaIncidentTag.tag() instead.
+        "prototype$__get__tag": {
+          url: urlBase + "/MediaIncidentTags/:id/tag",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.MediaIncidentTag#create
+         * @methodOf govright.corpusServices.MediaIncidentTag
+         *
+         * @description
+         *
+         * Create a new instance of the model and persist it into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `MediaIncidentTag` object.)
+         * </em>
+         */
+        "create": {
+          url: urlBase + "/MediaIncidentTags",
+          method: "POST"
+        },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.MediaIncidentTag#createMany
+         * @methodOf govright.corpusServices.MediaIncidentTag
+         *
+         * @description
+         *
+         * Create a new instance of the model and persist it into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `MediaIncidentTag` object.)
+         * </em>
+         */
+        "createMany": {
+          isArray: true,
+          url: urlBase + "/MediaIncidentTags",
+          method: "POST"
+        },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.MediaIncidentTag#upsert
+         * @methodOf govright.corpusServices.MediaIncidentTag
+         *
+         * @description
+         *
+         * Update an existing model instance or insert a new one into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `MediaIncidentTag` object.)
+         * </em>
+         */
+        "upsert": {
+          url: urlBase + "/MediaIncidentTags",
+          method: "PUT"
+        },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.MediaIncidentTag#exists
+         * @methodOf govright.corpusServices.MediaIncidentTag
+         *
+         * @description
+         *
+         * Check whether a model instance exists in the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `exists` – `{boolean=}` - 
+         */
+        "exists": {
+          url: urlBase + "/MediaIncidentTags/:id/exists",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.MediaIncidentTag#findById
+         * @methodOf govright.corpusServices.MediaIncidentTag
+         *
+         * @description
+         *
+         * Find a model instance by id from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         *  - `filter` – `{object=}` - Filter defining fields and include
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `MediaIncidentTag` object.)
+         * </em>
+         */
+        "findById": {
+          url: urlBase + "/MediaIncidentTags/:id",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.MediaIncidentTag#find
+         * @methodOf govright.corpusServices.MediaIncidentTag
+         *
+         * @description
+         *
+         * Find all instances of the model matched by filter from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining fields, where, include, order, offset, and limit
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `MediaIncidentTag` object.)
+         * </em>
+         */
+        "find": {
+          isArray: true,
+          url: urlBase + "/MediaIncidentTags",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.MediaIncidentTag#findOne
+         * @methodOf govright.corpusServices.MediaIncidentTag
+         *
+         * @description
+         *
+         * Find first instance of the model matched by filter from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining fields, where, include, order, offset, and limit
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `MediaIncidentTag` object.)
+         * </em>
+         */
+        "findOne": {
+          url: urlBase + "/MediaIncidentTags/findOne",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.MediaIncidentTag#updateAll
+         * @methodOf govright.corpusServices.MediaIncidentTag
+         *
+         * @description
+         *
+         * Update instances of the model matched by where from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * The number of instances updated
+         */
+        "updateAll": {
+          url: urlBase + "/MediaIncidentTags/update",
+          method: "POST"
+        },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.MediaIncidentTag#deleteById
+         * @methodOf govright.corpusServices.MediaIncidentTag
+         *
+         * @description
+         *
+         * Delete a model instance by id from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `MediaIncidentTag` object.)
+         * </em>
+         */
+        "deleteById": {
+          url: urlBase + "/MediaIncidentTags/:id",
+          method: "DELETE"
+        },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.MediaIncidentTag#count
+         * @methodOf govright.corpusServices.MediaIncidentTag
+         *
+         * @description
+         *
+         * Count instances of the model matched by where from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `count` – `{number=}` - 
+         */
+        "count": {
+          url: urlBase + "/MediaIncidentTags/count",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.MediaIncidentTag#prototype$updateAttributes
+         * @methodOf govright.corpusServices.MediaIncidentTag
+         *
+         * @description
+         *
+         * Update attributes for a model instance and persist it into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `MediaIncidentTag` object.)
+         * </em>
+         */
+        "prototype$updateAttributes": {
+          url: urlBase + "/MediaIncidentTags/:id",
+          method: "PUT"
+        },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.MediaIncidentTag#createChangeStream
+         * @methodOf govright.corpusServices.MediaIncidentTag
+         *
+         * @description
+         *
+         * Create a change stream.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         *  - `options` – `{object=}` - 
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * Data properties:
+         *
+         *  - `changes` – `{ReadableStream=}` - 
+         */
+        "createChangeStream": {
+          url: urlBase + "/MediaIncidentTags/change-stream",
+          method: "POST"
+        },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.MediaIncidentTag#distinct
+         * @methodOf govright.corpusServices.MediaIncidentTag
+         *
+         * @description
+         *
+         * Identify distinct values of the model matched by filter.where from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining distinct fields and limiting where
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `MediaIncidentTag` object.)
+         * </em>
+         */
+        "distinct": {
+          isArray: true,
+          url: urlBase + "/MediaIncidentTags/distinct",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.MediaIncidentTag#groupedcount
+         * @methodOf govright.corpusServices.MediaIncidentTag
+         *
+         * @description
+         *
+         * Count with group aggregation.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining grouping fields and limiting where
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `MediaIncidentTag` object.)
+         * </em>
+         */
+        "groupedcount": {
+          isArray: true,
+          url: urlBase + "/MediaIncidentTags/groupedcount",
+          method: "GET"
+        },
+      }
+    );
+
+
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.MediaIncidentTag#updateOrCreate
+         * @methodOf govright.corpusServices.MediaIncidentTag
+         *
+         * @description
+         *
+         * Update an existing model instance or insert a new one into the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *   This method does not accept any parameters.
+         *   Supply an empty object or omit this argument altogether.
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `MediaIncidentTag` object.)
+         * </em>
+         */
+        R["updateOrCreate"] = R["upsert"];
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.MediaIncidentTag#update
+         * @methodOf govright.corpusServices.MediaIncidentTag
+         *
+         * @description
+         *
+         * Update instances of the model matched by where from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `where` – `{object=}` - Criteria to match model instances
+         *
+         * @param {Object} postData Request data.
+         *
+         * This method expects a subset of model properties as request parameters.
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * The number of instances updated
+         */
+        R["update"] = R["updateAll"];
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.MediaIncidentTag#destroyById
+         * @methodOf govright.corpusServices.MediaIncidentTag
+         *
+         * @description
+         *
+         * Delete a model instance by id from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `MediaIncidentTag` object.)
+         * </em>
+         */
+        R["destroyById"] = R["deleteById"];
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.MediaIncidentTag#removeById
+         * @methodOf govright.corpusServices.MediaIncidentTag
+         *
+         * @description
+         *
+         * Delete a model instance by id from the data source.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - Model id
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `MediaIncidentTag` object.)
+         * </em>
+         */
+        R["removeById"] = R["deleteById"];
+
+
+    /**
+    * @ngdoc property
+    * @name govright.corpusServices.MediaIncidentTag#modelName
+    * @propertyOf govright.corpusServices.MediaIncidentTag
+    * @description
+    * The name of the model represented by this $resource,
+    * i.e. `MediaIncidentTag`.
+    */
+    R.modelName = "MediaIncidentTag";
+
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.MediaIncidentTag#incident
+         * @methodOf govright.corpusServices.MediaIncidentTag
+         *
+         * @description
+         *
+         * Fetches belongsTo relation incident.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `refresh` – `{boolean=}` - 
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `MediaIncident` object.)
+         * </em>
+         */
+        R.incident = function() {
+          var TargetResource = $injector.get("MediaIncident");
+          var action = TargetResource["::get::MediaIncidentTag::incident"];
+          return action.apply(R, arguments);
+        };
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.MediaIncidentTag#tag
+         * @methodOf govright.corpusServices.MediaIncidentTag
+         *
+         * @description
+         *
+         * Fetches belongsTo relation tag.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `id` – `{*}` - PersistedModel id
+         *
+         *  - `refresh` – `{boolean=}` - 
+         *
+         * @param {function(Object,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Object} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Tag` object.)
+         * </em>
+         */
+        R.tag = function() {
+          var TargetResource = $injector.get("Tag");
+          var action = TargetResource["::get::MediaIncidentTag::tag"];
           return action.apply(R, arguments);
         };
 
@@ -29481,6 +31404,40 @@ module.factory(
         "distinct": {
           isArray: true,
           url: urlBase + "/Regions/distinct",
+          method: "GET"
+        },
+
+        /**
+         * @ngdoc method
+         * @name govright.corpusServices.Region#groupedcount
+         * @methodOf govright.corpusServices.Region
+         *
+         * @description
+         *
+         * Count with group aggregation.
+         *
+         * @param {Object=} parameters Request parameters.
+         *
+         *  - `filter` – `{object=}` - Filter defining grouping fields and limiting where
+         *
+         * @param {function(Array.<Object>,Object)=} successCb
+         *   Success callback with two arguments: `value`, `responseHeaders`.
+         *
+         * @param {function(Object)=} errorCb Error callback with one argument:
+         *   `httpResponse`.
+         *
+         * @returns {Array.<Object>} An empty reference that will be
+         *   populated with the actual data once the response is returned
+         *   from the server.
+         *
+         * <em>
+         * (The remote method definition does not provide any description.
+         * This usually means the response is a `Region` object.)
+         * </em>
+         */
+        "groupedcount": {
+          isArray: true,
+          url: urlBase + "/Regions/groupedcount",
           method: "GET"
         },
 
